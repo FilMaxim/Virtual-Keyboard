@@ -1,17 +1,110 @@
 body {
   min-height: 100vh;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 710px;
+  background-color: #3172f4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-transform: uppercase;
-  background-color: #363636;
+  gap: 15px;
+  border: 2px solid black;
+  padding: 5px;
 }
 
-h1 { color: #e6c300; }
+.keyboard__text {
+  cursor: pointer;
+  width: 80%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: horizontal;
+  height: 152px;
+}
 
-img {
-  width: 90vw;
-  max-width: 256px;
+.keyboard {
+  width: 855px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 3px 6px 9px #000000;
+  background: #888888;
+  border-radius: 10px;
+}
+
+.keyboard--key {
+  border-radius: 7px;
+  box-shadow: 1px 2px 3px #000000;
+  cursor: pointer;
+  height: 50px;
+  min-width: 50px;
+  margin-right: 5px;
+  font-size: 25px;
+  text-align: center;
+  line-height: 1;
+  padding: 0;
+  vertical-align: middle;
+  margin-bottom: 7px;
+  
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* Button*/
+.backspace,
+.tab,
+.delete,
+.capslock,
+.enter,
+.shiftleft,
+.shiftright,
+.arrowup,
+.arrowleft,
+.arrowright,
+.arrowdown,
+.controlleft,
+.controlright,
+.metaleft,
+.altleft,
+.altright {
+  background-color: #c5c2c2d0;
+  font-size: 20px;
+ 
+}
+
+.backspace {
+  width: 140px;
+  margin-right: 0;
+  font-size: 30px;
+}
+
+.tab {
+  width: 85px;
+}
+
+.capslock,
+.shiftleft {
+  width: 140px;
+}
+
+.enter,
+.shiftright {
+  width: 105px;
+}
+
+.enter,
+.shiftright,
+.delete,
+.controlright {
+  margin-right: 0;
+}
+
+.space {
+  width: 415px;
 }

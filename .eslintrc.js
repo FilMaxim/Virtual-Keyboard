@@ -10,10 +10,8 @@ export default {
     sourceType: "module",
   },
   plugins: ["react"],
-  ignores: ["**/*.config.js"],
-  files: ["src/**/*.js"],
+
   rules: {
-    semi: "error",
-    "prefer-const": "error",
+
   },  
 };

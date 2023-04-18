@@ -1,18 +1,39 @@
-import image from './images/lazy.png';
+const wrapper = document.createElement("div");
+wrapper.classList.add("wrapper");
 
-const createImage = (src) => new Promise((res, rej) => {
-  const img = new Image();
-  img.onload = () => res(img);
-  img.onerror = rej;
-  img.src = src;
-});
+const texrArea = document.createElement("textarea");
+texrArea.classList.add("keyboard__text");
 
-async function render() {
-  const subHeader = document.createElement('h2');
-  subHeader.innerHTML = 'This elements was created by js';
-  const myImage = await createImage(image);
-  document.body.appendChild(subHeader);
-  document.body.appendChild(myImage);
+const keyboard = document.createElement("div");
+keyboard.classList.add("keyboard");
+
+wrapper.append(texrArea, keyboard);
+document.body.append(wrapper);
+
+const y = require("./keyboard.json");
+const data = JSON.parse(JSON.stringify(y));
+
+for (let element of data) {
+  const button = document.createElement("button");
+  button.classList.add("keyboard--key", element.code.toLowerCase());
+  button.type = "button";
+  button.textContent = element.key;
+  keyboard.append(button);
+
+  if (
+    element.code === "Backspace" ||
+    element.code === "Delete" ||
+    element.code === "Enter" ||
+    element.code === "ShiftRight"
+  ) {
+    const clearFix = document.createElement("div");
+    clearFix.classList.add("clearfix");
+    keyboard.append(clearFix);
+  }
 }
 
-render();
+let arr = [];
+document.onkeydown = function (event) {
+  arr.push(event.code);
+  console.log(arr);
+};
