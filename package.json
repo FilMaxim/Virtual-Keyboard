@@ -3,13 +3,16 @@
   "description": "My new js application",
   "private": true,
   "name": "my-app",
+ 
+
   "scripts": {
     "start": "rss-scripts start",
     "build": "rss-scripts build"
   },
   "devDependencies": {
     "eslint": "^8.38.0",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
     "rss-scripts": "^0.2.4"
   },
   "dependencies": {

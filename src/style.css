@@ -1,20 +1,23 @@
 body {
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
   -webkit-text-size-adjust: 100%;
+  background-color: #3172f4;
+}
+
+button:focus-visible{
+  outline: none;
 }
 
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
   min-height: 710px;
-  background-color: #3172f4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  border: 2px solid black;
   padding: 5px;
 }
 
@@ -25,6 +28,9 @@ body {
   overflow-wrap: break-word;
   resize: horizontal;
   height: 152px;
+  padding: 15px;
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .keyboard {
@@ -38,7 +44,7 @@ body {
 
 .keyboard--key {
   border-radius: 7px;
-  box-shadow: 1px 2px 3px #000000;
+  box-shadow: 2px 4px 5px #000000;
   cursor: pointer;
   height: 50px;
   min-width: 50px;
@@ -49,6 +55,26 @@ body {
   padding: 0;
   vertical-align: middle;
   margin-bottom: 7px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.keyboard--key:hover {
+  background-color: #fcd247e4;
+}
+
+.service {
+  background-color: #c5c2c2d0;
+  font-size: 20px;
+}
+
+
+.hover {
+  box-shadow: none;
+  top: 2px;
+  left: 2px;
+  background-color: #fcd247e4;
+  
   
 }
 
@@ -57,54 +83,33 @@ body {
 }
 
 /* Button*/
-.backspace,
-.tab,
-.delete,
-.capslock,
-.enter,
-.shiftleft,
-.shiftright,
-.arrowup,
-.arrowleft,
-.arrowright,
-.arrowdown,
-.controlleft,
-.controlright,
-.metaleft,
-.altleft,
-.altright {
-  background-color: #c5c2c2d0;
-  font-size: 20px;
- 
-}
-
-.backspace {
+#Backspace {
   width: 140px;
   margin-right: 0;
   font-size: 30px;
 }
 
-.tab {
+#Tab {
   width: 85px;
 }
 
-.capslock,
-.shiftleft {
+#CapsLock,
+#ShiftLeft {
   width: 140px;
 }
 
-.enter,
-.shiftright {
+#Enter,
+#ShiftRight {
   width: 105px;
 }
 
-.enter,
-.shiftright,
-.delete,
-.controlright {
+#Enter,
+#ShiftRight,
+#Delete,
+#ControlRight {
   margin-right: 0;
 }
 
-.space {
+#Space {
   width: 415px;
 }

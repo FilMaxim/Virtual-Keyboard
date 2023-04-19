@@ -3,317 +3,380 @@
         "code": "Backquote",
         "key": "'",
         "shiftKey": "~",
-        "altKey": "~"
+        "altKey": "~",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit1",
         "key": "1",
         "shiftKey": "!",
-        "altKey": "1"
+        "altKey": "1",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit2",
         "key": "2",
         "shiftKey": "@",
-        "altKey": "2"
+        "altKey": "2",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit3",
         "key": "3",
         "shiftKey": "#",
-        "altKey": "3"
+        "altKey": "3",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit4",
         "key": "4",
         "shiftKey": "$",
-        "altKey": "4"
+        "altKey": "4",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit5",
         "key": "5",
         "shiftKey": "%",
-        "altKey": "5"
+        "altKey": "5",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit6",
         "key": "6",
         "shiftKey": "^",
-        "altKey": "6"
+        "altKey": "6",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit7",
         "key": "7",
         "shiftKey": "&",
-        "altKey": "7"
+        "altKey": "7",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit8",
         "key": "8",
         "shiftKey": "*",
-        "altKey": "8"
+        "altKey": "8",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit9",
         "key": "9",
         "shiftKey": "(",
-        "altKey": "9"
+        "altKey": "9",
+        "group": "alphanumeric"
     },
     {
         "code": "Digit0",
         "key": "0",
         "shiftKey": ")",
-        "altKey": "0"
+        "altKey": "0",
+        "group": "alphanumeric"
     },
     {
         "code": "Minus",
         "key": "-",
         "shiftKey": "_",
-        "altKey": "-"
+        "altKey": "-",
+        "group": "alphanumeric"
     },
     {
         "code": "Equal",
         "key": "=",
         "shiftKey": "+",
-        "altKey": "="
+        "altKey": "=",
+        "group": "alphanumeric"
     },
     {
         "code": "Backspace",
-        "key": "⟵"
+        "key": "⟵",
+        "group": "service"
     },
-
     {
         "code": "Tab",
-        "key": "⇥ Tab"
+        "key": "⇥ Tab",
+        "group": "service"
     },
     {
         "code": "KeyQ",
         "key": "q",
-        "shiftKey": "Q"
+        "shiftKey": "Q",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyW",
         "key": "w",
-        "shiftKey": "W"
+        "shiftKey": "W",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyE",
         "key": "e",
-        "shiftKey": "E"
+        "shiftKey": "E",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyR",
         "key": "r",
-        "shiftKey": "R"
+        "shiftKey": "R",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyT",
         "key": "t",
-        "shiftKey": "T"
+        "shiftKey": "T",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyY",
         "key": "y",
-        "shiftKey": "Y"
+        "shiftKey": "Y",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyU",
         "key": "u",
-        "shiftKey": "U"
+        "shiftKey": "U",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyI",
         "key": "i",
-        "shiftKey": "I"
+        "shiftKey": "I",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyO",
         "key": "o",
-        "shiftKey": "O"
+        "shiftKey": "O",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyP",
         "key": "p",
-        "shiftKey": "P"
+        "shiftKey": "P",
+        "group": "alphanumeric"
     },
     {
         "code": "BracketLeft",
         "key": "[",
-        "shiftKey": "{"
+        "shiftKey": "{",
+        "group": "alphanumeric"
     },
     {
         "code": "BracketRight",
         "key": "]",
-        "shiftKey": "}"
+        "shiftKey": "}",
+        "group": "alphanumeric"
     },
     {
         "code": "Backslash",
         "key": "\\",
-        "shiftKey": "|"
+        "shiftKey": "|",
+        "group": "alphanumeric"
     },
     {
         "code": "Delete",
-        "key": "Del"
+        "key": "Del",
+        "group": "service"
     },
     {
         "code": "CapsLock",
-        "key": "⇪ Caps"
+        "key": "⇪ Caps",
+        "group": "service"
     },
     {
         "code": "KeyA",
         "key": "a",
-        "shiftKey": "A"
+        "shiftKey": "A",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyS",
         "key": "s",
-        "shiftKey": "S"
+        "shiftKey": "S",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyD",
         "key": "d",
-        "shiftKey": "D"
+        "shiftKey": "D",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyF",
         "key": "f",
-        "shiftKey": "F"
+        "shiftKey": "F",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyG",
         "key": "g",
-        "shiftKey": "G"
+        "shiftKey": "G",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyH",
         "key": "h",
-        "shiftKey": "H"
+        "shiftKey": "H",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyJ",
         "key": "j",
-        "shiftKey": "J"
+        "shiftKey": "J",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyK",
         "key": "k",
-        "shiftKey": "K"
+        "shiftKey": "K",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyL",
         "key": "l",
-        "shiftKey": "L"
+        "shiftKey": "L",
+        "group": "alphanumeric"
     },
     {
         "code": "Semicolon",
         "key": ";",
-        "shiftKey": ":"
+        "shiftKey": ":",
+        "group": "alphanumeric"
     },
     {
         "code": "Quote",
         "key": "'",
-        "shiftKey": "\""
+        "shiftKey": "\"",
+        "group": "alphanumeric"
     },
     {
         "code": "Enter",
-        "key": "Enter"
+        "key": "Enter",
+        "group": "service"
     },
     {
         "code": "ShiftLeft",
-        "key": "⇧ Shift"
+        "key": "⇧ Shift",
+        "group": "service"
     },
     {
         "code": "KeyZ",
         "key": "z",
-        "shiftKey": "Z"
+        "shiftKey": "Z",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyX",
         "key": "x",
-        "shiftKey": "X"
+        "shiftKey": "X",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyC",
         "key": "c",
-        "shiftKey": "C"
+        "shiftKey": "C",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyV",
         "key": "v",
-        "shiftKey": "V"
+        "shiftKey": "V",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyB",
         "key": "b",
-        "shiftKey": "B"
+        "shiftKey": "B",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyN",
         "key": "n",
-        "shiftKey": "N"
+        "shiftKey": "N",
+        "group": "alphanumeric"
     },
     {
         "code": "KeyM",
         "key": "m",
-        "shiftKey": "M"
+        "shiftKey": "M",
+        "group": "alphanumeric"
     },
     {
         "code": "Comma",
         "key": ",",
-        "shiftKey": "<"
+        "shiftKey": "<",
+        "group": "alphanumeric"
     },
     {
         "code": "Period",
         "key": ".",
-        "shiftKey": ">"
+        "shiftKey": ">",
+        "group": "alphanumeric"
     },
     {
         "code": "Slash",
         "key": "/",
-        "shiftKey": "?"
+        "shiftKey": "?",
+        "group": "alphanumeric"
     },
     {
         "code": "ArrowUp",
-        "key": "▲"
+        "key": "▲",
+        "group": "service"
     },
     {
         "code": "ShiftRight",
-        "key": "⇧ Shift"
+        "key": "⇧ Shift",
+        "group": "service"
     },
     {
         "code": "ControlLeft",
-        "key": "Ctrl"
+        "key": "Ctrl",
+        "group": "service"
     },
     {
         "code": "MetaLeft",
-        "key": "Win"
+        "key": "Win",
+        "group": "service"
     },
     {
         "code": "AltLeft",
-        "key": "Alt"
+        "key": "Alt",
+        "group": "service"
     },
     {
         "code": "Space",
-        "key": ""
+        "key": " ",
+        "group": "alphanumeric"
     },
     {
         "code": "AltRight",
-        "key": "Alt"
+        "key": "Alt",
+        "group": "service"
     },
     {
         "code": "ArrowLeft",
-        "key": "◄"
+        "key": "◄",
+        "group": "service"
     },
     {
         "code": "ArrowDown",
-        "key": "▼"
+        "key": "▼",
+        "group": "service"
     },
     {
         "code": "ArrowRight",
-        "key": "►"
+        "key": "►",
+        "group": "service"
     },
     {
         "code": "ControlRight",
-        "key": "Ctrl"
-    } 
+        "key": "Ctrl",
+        "group": "service"
+    }
 ]
