@@ -1,24 +1,23 @@
+/* import clickKeyboard from './components/clickKeyBoard';
 import data from './components/data';
 import setCaretPosition from './components/positionCaret';
 import renderKeyboard from './components/render-keyboard';
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
-
-const textArea = document.createElement('textarea');
+ const textArea = document.createElement('textarea');
 textArea.autofocus = true;
 textArea.focus();
 textArea.placeholder = 'Введите ваш текст....';
 textArea.classList.add('keyboard__text');
 
-const arrValueFunc = (status) => data.map((el) => {
+ const arrValueFunc = (status) => data.map((el) => {
   if (el.group === 'alphanumeric') return el[status];
   if (el.group === 'service') return el.key;
   return false;
 });
 
-const arrValue = arrValueFunc('key');
-
+let arrValue = arrValueFunc('key');
 const keyboard = renderKeyboard(arrValue);
 wrapper.append(textArea, keyboard);
 document.body.append(wrapper);
@@ -37,7 +36,8 @@ const print = (event) => {
   }
   // функционал на буквы и цифра по group === 'alphanumeric';
   if (data[positionInArr] && data[positionInArr].group === 'alphanumeric') {
-    textArea.setRangeText(arrValue[positionInArr], textArea.selectionStart, textArea.selectionEnd, 'end');
+    // textArea.setRangeText(arrValue[positionInArr],
+    textArea.selectionStart, textArea.selectionEnd, 'end');
     textArea.focus();
   }
   // функционал на BACKSPACE;
@@ -68,15 +68,16 @@ const print = (event) => {
   }
   // функционал на CAPS LOCK;
   if (data[positionInArr] && data[positionInArr].code === 'CapsLock') {
-    // arrValue = arrValueFunc('shiftKey');
-    document.querySelector('.keyboard').remove();
+    arrValue = arrValueFunc('shiftKey');
+    changeStatus(arrValue);
+    // document.querySelector('.keyboard').remove();
     // keyboard = renderKeyboard(arrValue);
   }
 };
 
 // Кнопка мыши нажата над элементом.
 
-keyboard.addEventListener('mousedown', (event) => {
+/* keyboard.addEventListener('mousedown', (event) => {
   print(event);
 });
 
@@ -93,7 +94,7 @@ document.addEventListener('mouseout', (event) => {
 // нажата кнопка на клавиатуре
 document.addEventListener('keydown', (event) => {
   event.preventDefault();
-  print(event);
+  clickKeyboard(event);
   keyboard.querySelector(`#${event.code}`).classList.add('hover');
 });
 
@@ -101,3 +102,10 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
   keyboard.querySelector(`#${event.code}`).classList.remove('hover');
 });
+*/
+
+import Controller from './components/controller';
+import Model from './components/model';
+import View from './components/view';
+
+const app = new Controller(new Model(), new View());

@@ -1,3 +1,4 @@
+import clickKeyboard from './clickKeyBoard';
 import data from './data';
 
 const renderKeyboard = (dataArr) => {
@@ -12,6 +13,11 @@ const renderKeyboard = (dataArr) => {
     button.id = data[index].code;
     button.type = 'button';
     button.textContent = element;
+
+    // Кнопка мыши нажата над элементом.
+    button.addEventListener('mousedown', (event) => {
+      clickKeyboard(event);
+    });
 
     keyboard.append(button);
   });

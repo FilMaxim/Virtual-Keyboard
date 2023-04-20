@@ -2,92 +2,105 @@
     {
         "code": "Backquote",
         "key": "'",
-        "shiftKey": "~",
-        "altKey": "~",
+        "shiftKeyEN": "~",
+        "keyRu": "ё",
+        "shiftKeyRu": "Ё",        
         "group": "alphanumeric"
     },
     {
         "code": "Digit1",
         "key": "1",
-        "shiftKey": "!",
-        "altKey": "1",
+        "shiftKeyEN": "!",
+        "keyRu": "1",
+        "shiftKeyRu": "!", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit2",
         "key": "2",
-        "shiftKey": "@",
-        "altKey": "2",
+        "shiftKeyEN": "@",
+        "keyRu": "2",
+        "shiftKeyRu": "\"", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit3",
         "key": "3",
-        "shiftKey": "#",
-        "altKey": "3",
+        "shiftKeyEN": "#",
+        "keyRu": "3",
+        "shiftKeyRu": "№", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit4",
         "key": "4",
-        "shiftKey": "$",
-        "altKey": "4",
+        "shiftKeyEN": "$",
+        "keyRu": "4",
+        "shiftKeyRu": ";", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit5",
         "key": "5",
-        "shiftKey": "%",
-        "altKey": "5",
+        "shiftKeyEN": "%",
+        "keyRu": "5",
+        "shiftKeyRu": "%", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit6",
         "key": "6",
-        "shiftKey": "^",
-        "altKey": "6",
+        "shiftKeyEN": "^",
+        "keyRu": "6",
+        "shiftKeyRu": ":", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit7",
         "key": "7",
-        "shiftKey": "&",
-        "altKey": "7",
+        "shiftKeyEN": "&",
+        "keyRu": "7",
+        "shiftKeyRu": "?", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit8",
         "key": "8",
-        "shiftKey": "*",
-        "altKey": "8",
+        "shiftKeyEN": "*",
+        "keyRu": "8",
+        "shiftKeyRu": "*", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit9",
         "key": "9",
-        "shiftKey": "(",
-        "altKey": "9",
+        "shiftKeyEN": "(",
+        "keyRu": "9",
+        "shiftKeyRu": "(", 
         "group": "alphanumeric"
     },
     {
         "code": "Digit0",
         "key": "0",
-        "shiftKey": ")",
-        "altKey": "0",
+        "shiftKeyEN": ")",
+        "keyRu": "0",
+        "shiftKeyRu": ")", 
         "group": "alphanumeric"
     },
     {
         "code": "Minus",
         "key": "-",
-        "shiftKey": "_",
-        "altKey": "-",
+        "shiftKeyEN": "_",
+        "keyRu": "-",
+        "shiftKeyRu": "_", 
         "group": "alphanumeric"
     },
     {
         "code": "Equal",
         "key": "=",
-        "shiftKey": "+",
-        "altKey": "=",
+        "shiftKeyEN": "+",
+        "keyRu": "=",
+        "shiftKeyRu": "+", 
         "group": "alphanumeric"
     },
     {
@@ -103,79 +116,105 @@
     {
         "code": "KeyQ",
         "key": "q",
-        "shiftKey": "Q",
+        "shiftKeyEN": "Q",
+        "keyRu": "й",
+        "shiftKeyRu": "Й", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyW",
         "key": "w",
-        "shiftKey": "W",
+        "shiftKeyEN": "W",
+        "keyRu": "ц",
+        "shiftKeyRu": "Ц", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyE",
         "key": "e",
-        "shiftKey": "E",
+        "shiftKeyEN": "E",
+        "keyRu": "у",
+        "shiftKeyRu": "У", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyR",
         "key": "r",
-        "shiftKey": "R",
+        "shiftKeyEN": "R",
+        "keyRu": "к",
+        "shiftKeyRu": "К", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyT",
         "key": "t",
-        "shiftKey": "T",
+        "shiftKeyEN": "T",
+        "keyRu": "е",
+        "shiftKeyRu": "Е", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyY",
         "key": "y",
-        "shiftKey": "Y",
+        "shiftKeyEN": "Y",
+        "keyRu": "н",
+        "shiftKeyRu": "Н", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyU",
         "key": "u",
-        "shiftKey": "U",
+        "shiftKeyEN": "U",
+        "keyRu": "г",
+        "shiftKeyRu": "Г", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyI",
         "key": "i",
-        "shiftKey": "I",
+        "shiftKeyEN": "I",
+        "keyRu": "ш",
+        "shiftKeyRu": "Ш", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyO",
         "key": "o",
-        "shiftKey": "O",
+        "shiftKeyEN": "O",
+        "keyRu": "щ",
+        "shiftKeyRu": "Щ", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyP",
         "key": "p",
-        "shiftKey": "P",
+        "shiftKeyEN": "P",
+        "keyRu": "з",
+        "shiftKeyRu": "З", 
         "group": "alphanumeric"
     },
     {
         "code": "BracketLeft",
         "key": "[",
-        "shiftKey": "{",
+        "shiftKeyEN": "{",
+        "keyRu": "х",
+        "shiftKeyRu": "Х", 
         "group": "alphanumeric"
     },
     {
         "code": "BracketRight",
         "key": "]",
-        "shiftKey": "}",
+        "shiftKeyEN": "}",
+        "keyRu": "ъ",
+        "shiftKeyRu": "Ъ", 
         "group": "alphanumeric"
     },
     {
         "code": "Backslash",
         "key": "\\",
-        "shiftKey": "|",
+        "shiftKeyEN": "|",
+        "keyRu": "\\",
+        "shiftKeyRu": "/", 
         "group": "alphanumeric"
     },
     {
@@ -191,67 +230,89 @@
     {
         "code": "KeyA",
         "key": "a",
-        "shiftKey": "A",
+        "shiftKeyEN": "A",
+        "keyRu": "ф",
+        "shiftKeyRu": "Ф", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyS",
         "key": "s",
-        "shiftKey": "S",
+        "shiftKeyEN": "S",
+        "keyRu": "ы",
+        "shiftKeyRu": "Ы", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyD",
         "key": "d",
-        "shiftKey": "D",
+        "shiftKeyEN": "D",
+        "keyRu": "в",
+        "shiftKeyRu": "В", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyF",
         "key": "f",
-        "shiftKey": "F",
+        "shiftKeyEN": "F",
+        "keyRu": "а",
+        "shiftKeyRu": "А", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyG",
         "key": "g",
-        "shiftKey": "G",
+        "shiftKeyEN": "G",
+        "keyRu": "п",
+        "shiftKeyRu": "П", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyH",
         "key": "h",
-        "shiftKey": "H",
+        "shiftKeyEN": "H",
+        "keyRu": "р",
+        "shiftKeyRu": "Р", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyJ",
         "key": "j",
-        "shiftKey": "J",
+        "shiftKeyEN": "J",
+        "keyRu": "о",
+        "shiftKeyRu": "О", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyK",
         "key": "k",
-        "shiftKey": "K",
+        "shiftKeyEN": "K",
+        "keyRu": "л",
+        "shiftKeyRu": "Л", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyL",
         "key": "l",
-        "shiftKey": "L",
+        "shiftKeyEN": "L",
+        "keyRu": "д",
+        "shiftKeyRu": "Д", 
         "group": "alphanumeric"
     },
     {
         "code": "Semicolon",
         "key": ";",
-        "shiftKey": ":",
+        "shiftKeyEN": ":",
+        "keyRu": "ж",
+        "shiftKeyRu": "Ж", 
         "group": "alphanumeric"
     },
     {
         "code": "Quote",
         "key": "'",
-        "shiftKey": "\"",
+        "shiftKeyEN": "\"",
+        "keyRu": "э",
+        "shiftKeyRu": "Э", 
         "group": "alphanumeric"
     },
     {
@@ -267,61 +328,81 @@
     {
         "code": "KeyZ",
         "key": "z",
-        "shiftKey": "Z",
+        "shiftKeyEN": "Z",
+        "keyRu": "я",
+        "shiftKeyRu": "Я", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyX",
         "key": "x",
-        "shiftKey": "X",
+        "shiftKeyEN": "X",
+        "keyRu": "ч",
+        "shiftKeyRu": "Ч", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyC",
         "key": "c",
-        "shiftKey": "C",
+        "shiftKeyEN": "C",
+        "keyRu": "с",
+        "shiftKeyRu": "С", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyV",
         "key": "v",
-        "shiftKey": "V",
+        "shiftKeyEN": "V",
+        "keyRu": "м",
+        "shiftKeyRu": "М", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyB",
         "key": "b",
-        "shiftKey": "B",
+        "shiftKeyEN": "B",
+        "keyRu": "и",
+        "shiftKeyRu": "И", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyN",
         "key": "n",
-        "shiftKey": "N",
+        "shiftKeyEN": "N",
+        "keyRu": "т",
+        "shiftKeyRu": "Т", 
         "group": "alphanumeric"
     },
     {
         "code": "KeyM",
         "key": "m",
-        "shiftKey": "M",
+        "shiftKeyEN": "M",
+        "keyRu": "ь",
+        "shiftKeyRu": "Ь", 
         "group": "alphanumeric"
     },
     {
         "code": "Comma",
         "key": ",",
-        "shiftKey": "<",
+        "shiftKeyEN": "<",
+        "keyRu": "б",
+        "shiftKeyRu": "Б", 
         "group": "alphanumeric"
     },
     {
         "code": "Period",
         "key": ".",
-        "shiftKey": ">",
+        "shiftKeyEN": ">",
+        "keyRu": "ю",
+        "shiftKeyRu": "Ю", 
         "group": "alphanumeric"
     },
     {
         "code": "Slash",
         "key": "/",
-        "shiftKey": "?",
+        "shiftKeyEN": "?",
+        "keyRu": ".",
+        "shiftKeyRu": ",", 
         "group": "alphanumeric"
     },
     {
@@ -352,6 +433,9 @@
     {
         "code": "Space",
         "key": " ",
+        "shiftKeyEN": " ",
+        "keyRu": " ",
+        "shiftKeyRu": " ", 
         "group": "alphanumeric"
     },
     {
