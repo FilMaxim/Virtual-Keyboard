@@ -76,8 +76,9 @@ export default class View {
   }
 
   eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat = false) {
-    if (!idKey) return;
     const el = this.keyboard.querySelector(`#${idKey}`);
+    if (idKey) { if (!idKey) return; }
+
     if (el === null) {
       return;
     }
@@ -182,9 +183,13 @@ export default class View {
     });
     // ----Нажата кнопка на клавиатуре----
     document.addEventListener('keydown', (event) => {
-      event.preventDefault();
+      //
       const keyRepeat = event.repeat;
       idKey = event.code;
+      if (this.keyboard.querySelector(`#${idKey}`)) {
+        event.preventDefault();
+      }
+
       this.eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat);
     });
 
