@@ -2,9 +2,12 @@ import setCaretPosition from './positionCaret';
 
 export default class View {
   constructor() {
-    const app = document.querySelector('#root');
+    const body = document.querySelector('body');
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('wrapper');
+
+    this.title = document.createElement('h1');
+    this.title.innerHTML = 'Виртуальная клавиатура';
 
     this.textArea = document.createElement('textarea');
     this.textArea.classList.add('keyboard__text');
@@ -14,8 +17,20 @@ export default class View {
 
     this.keyboard = document.createElement('div');
     this.keyboard.classList.add('keyboard');
-    this.wrapper.append(this.textArea, this.keyboard);
-    app.append(this.wrapper);
+
+    this.audio = document.createElement('audio');
+    this.audio.id = 'alarm';
+    this.source = document.createElement('source');
+    this.source.src = 'images/click.mp3';
+    this.audio.append(this.source);
+
+    this.description = document.createElement('div');
+    this.description.classList.add('description');
+    this.description.innerHTML = `Клавиатура создана в операционной системе Windows 11.\n
+    Для переключения языка комбинация: левыe ctrl + alt.`;
+
+    this.wrapper.append(this.title, this.textArea, this.keyboard, this.audio, this.description);
+    body.append(this.wrapper);
 
     this.statusShift = false;
     this.statusLang = 'EN';
@@ -62,13 +77,19 @@ export default class View {
 
   eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat = false) {
     if (!idKey) return;
+    const el = this.keyboard.querySelector(`#${idKey}`);
+    if (el === null) {
+      return;
+    }
+    if (!keyRepeat) this.audio.play();
+
     const elementClik = this.keyboard.querySelector(`#${idKey}`);
     if (idKey && elementClik && idKey !== 'CapsLock') {
       elementClik.classList.add('hover');
     } else if (idKey === 'CapsLock' && !keyRepeat) { this.keyboard.querySelector('#CapsLock').classList.toggle('hover'); }
 
     // функционал на буквы и цифра по group === 'alphanumeric';
-    if (this.keyboard.querySelector(`#${idKey}`).classList.contains('alphanumeric')) {
+    if (el.classList.contains('alphanumeric')) {
       this.textArea.setRangeText(handler(idKey), this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
       this.textArea.focus();
     }
@@ -102,8 +123,25 @@ export default class View {
     // функционал на Enter;
     if (idKey === 'Enter') this.keyTabEnter('\n');
 
-    // раскладка клавиатуры CTRL + ALT
+    // функционал на ArrowUp;
+    if (idKey === 'ArrowUp') this.keyTabEnter('▲');
 
+    // функционал на ArrowDown;
+    if (idKey === 'ArrowDown') this.keyTabEnter('▼');
+
+    // функционал на ArrowLeft;
+    if (idKey === 'ArrowLeft') {
+      const posDelete = this.textArea.selectionStart - 1;
+      setCaretPosition(this.textArea, posDelete);
+    }
+
+    // функционал на ArrowRight;
+    if (idKey === 'ArrowRight') {
+      const posDelete = this.textArea.selectionStart + 1;
+      setCaretPosition(this.textArea, posDelete);
+    }
+
+    // раскладка клавиатуры CTRL + ALT
     if (idKey === 'AltLeft') this.statusALT = !this.statusALT;
     if (idKey === 'ControlLeft') this.statusCTRL = !this.statusCTRL;
     if (this.statusALT && this.statusCTRL) handleLanguage();
@@ -152,7 +190,7 @@ export default class View {
 
     // ----Отпущена кнопка на клавиатуре----
     document.addEventListener('keyup', (event) => {
-      if (idKey !== 'CapsLock') {
+      if (idKey !== 'CapsLock' && this.keyboard.querySelector(`#${event.code}`)) {
         this.keyboard.querySelector(`#${event.code}`).classList.remove('hover');
       }
       // функционал на ShiftLeft or ShiftRight;

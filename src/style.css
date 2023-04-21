@@ -2,7 +2,15 @@ body {
   height: 100vh;
   margin: 0;
   -webkit-text-size-adjust: 100%;
-  background-color: #3172f4;
+  background-color: #14102d;
+}
+
+h1 {
+  color: rgb(201, 203, 203);
+  font-size: 2.5rem;
+  text-align: center;
+  width: 65%;
+  margin: 10px;
 }
 
 button:focus-visible{
@@ -10,7 +18,7 @@ button:focus-visible{
 }
 
 .wrapper {
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
   min-height: 710px;
   display: flex;
@@ -19,11 +27,12 @@ button:focus-visible{
   justify-content: center;
   gap: 15px;
   padding: 5px;
+  width: 900px;
 }
 
 .keyboard__text {
   cursor: pointer;
-  width: 80%;
+  width: 800px;
   overflow: hidden;
   overflow-wrap: break-word;
   resize: horizontal;
@@ -31,13 +40,15 @@ button:focus-visible{
   padding: 15px;
   font-size: 1.5rem;
   border-radius: 10px;
+  margin: 0 auto;
+
 }
 
 .keyboard {
   width: 855px;
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 3px 6px 9px #000000;
+  box-shadow: 5px 8px 9px  #b6ffb7;
   background: #888888;
   border-radius: 10px;
 }
@@ -73,13 +84,14 @@ button:focus-visible{
   box-shadow: none;
   top: 2px;
   left: 2px;
-  background-color: #fcd247e4;
-  
-  
+  background-color: #fcd247e4;  
 }
 
-.clearfix {
-  clear: both;
+.description {
+  color: rgb(201, 203, 203);
+  font-size: 1.5rem;
+  text-align: center;
+  width: 68%;
 }
 
 /* Button*/
