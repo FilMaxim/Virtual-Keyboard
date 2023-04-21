@@ -16,12 +16,16 @@ export default class View {
     this.keyboard.classList.add('keyboard');
     this.wrapper.append(this.textArea, this.keyboard);
     app.append(this.wrapper);
+
+    this.statusShift = false;
+    this.statusLang = 'EN';
+    this.statusCTRL = false;
+    this.statusALT = false;
   }
 
   displayKey(arrValues, datakey) {
     // Delete all nodes
     if (this.keyboard.firstChild) {
-      console.log(this.keyboard.querySelectorAll('.keyboard--key'));
       this.keyboard.childNodes.forEach((el, index) => {
         // eslint-disable-next-line no-param-reassign
         el.textContent = arrValues[index];
@@ -43,73 +47,125 @@ export default class View {
     // Create keys
   }
 
-  clickMousedown(handler, handlerChange) {
+  keyDeleteBackspase(shift = 0) {
+    const posDelete = this.textArea.selectionStart - shift;
+    const valueArr = this.textArea.value.split('');
+    valueArr.splice(posDelete, 1);
+    this.textArea.value = valueArr.join('');
+    setCaretPosition(this.textArea, posDelete);
+  }
+
+  keyTabEnter(value) {
+    this.textArea.setRangeText(value, this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
+    this.textArea.focus();
+  }
+
+  eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat = false) {
+    if (!idKey) return;
+    const elementClik = this.keyboard.querySelector(`#${idKey}`);
+    if (idKey && elementClik && idKey !== 'CapsLock') {
+      elementClik.classList.add('hover');
+    } else if (idKey === 'CapsLock' && !keyRepeat) { this.keyboard.querySelector('#CapsLock').classList.toggle('hover'); }
+
+    // функционал на буквы и цифра по group === 'alphanumeric';
+    if (this.keyboard.querySelector(`#${idKey}`).classList.contains('alphanumeric')) {
+      this.textArea.setRangeText(handler(idKey), this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
+      this.textArea.focus();
+    }
+    // функционал на BACKSPACE;
+    if (idKey === 'Backspace') {
+      if (this.textArea.selectionStart !== 0) {
+        this.keyDeleteBackspase(1);
+      }
+    }
+    // функционал на DELETE;
+    if (idKey === 'Delete') {
+      this.keyDeleteBackspase();
+    }
+
+    // функционал на CAPS LOCK;
+    if (idKey === 'CapsLock' && !keyRepeat) {
+      handlerChange();
+    }
+
+    // функционал на ShiftLeft and ShiftRight;
+    if (idKey === 'ShiftLeft' || idKey === 'ShiftRight') {
+      if (!this.statusShift) {
+        handlerChange();
+        this.statusShift = !this.statusShift;
+      }
+    }
+
+    // функционал на TAB
+    if (idKey === 'Tab') this.keyTabEnter('    ');
+
+    // функционал на Enter;
+    if (idKey === 'Enter') this.keyTabEnter('\n');
+
+    // раскладка клавиатуры CTRL + ALT
+
+    if (idKey === 'AltLeft') this.statusALT = !this.statusALT;
+    if (idKey === 'ControlLeft') this.statusCTRL = !this.statusCTRL;
+    if (this.statusALT && this.statusCTRL) handleLanguage();
+  }
+
+  clickMousedown(handler, handlerChange, handleLanguage) {
     let idKey;
-    // Кнопка мыши нажата над элементом.
+
+    // ----Кнопка мыши нажата над элементом-----
     this.keyboard.addEventListener('mousedown', (event) => {
       idKey = event.target.id;
-      if (event.target.classList.contains('keyboard--key') && idKey !== 'CapsLock') {
-        event.target.classList.add('hover');
-      } else if (idKey === 'CapsLock') { event.target.classList.toggle('hover'); }
-      // функционал на буквы и цифра по group === 'alphanumeric';
-      if (event.target.classList.contains('alphanumeric')) {
-        this.textArea.setRangeText(handler(idKey), this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
-        this.textArea.focus();
-      }
-      // функционал на BACKSPACE;
-      if (idKey === 'Backspace') {
-        if (this.textArea.selectionStart !== 0) {
-          const posDelete = this.textArea.selectionStart - 1;
-          const valueArr = this.textArea.value.split('');
-          valueArr.splice(posDelete, 1);
-          this.textArea.value = valueArr.join('');
-          setCaretPosition(this.textArea, posDelete);
-        }
-      }
-      // функционал на TAB;
-      if (idKey === 'Tab') {
-        this.textArea.setRangeText('    ', this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
-        this.textArea.focus();
-      }
-      // функционал на DELETE;
-      if (idKey === 'Delete') {
-        if (this.textArea.selectionStart !== 0) {
-          const posDelete = this.textArea.selectionStart;
-          const valueArr = this.textArea.value.split('');
-          valueArr.splice(posDelete, 1);
-          this.textArea.value = valueArr.join('');
-          setCaretPosition(this.textArea, posDelete);
-        }
-      }
-      // функционал на CAPS LOCK;
-      if (idKey === 'CapsLock') {
-        handlerChange();
-      }
-      // функционал на ShiftLeft or ShiftRight;
-      if (idKey === 'ShiftLeft' || idKey === 'ShiftRight') {
-        handlerChange();
-      }
-      // функционал на Enter;
-      if (idKey === 'Enter') {
-        this.textArea.setRangeText('\n', this.textArea.selectionStart, this.textArea.selectionEnd, 'end');
-        this.textArea.focus();
-      }
+
+      this.eventServise(idKey, handler, handlerChange, handleLanguage);
     });
-    // Кнопка мыши отпущена над элементом.
+    // ----Кнопка мыши отпущена над элементом----
     this.keyboard.addEventListener('mouseup', (event) => {
       if (event.target.classList.contains('keyboard--key') && idKey !== 'CapsLock') {
         event.target.classList.remove('hover');
       }
       // функционал на ShiftLeft or ShiftRight;
-      if (idKey === 'ShiftLeft' || idKey === 'ShiftRight') {
-        handlerChange();
+      if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
+        if (this.statusShift) {
+          handlerChange();
+          this.statusShift = false;
+        }
+      }
+      // раскладка клавиатуры CTRL + ALT
+      if (idKey === 'AltLeft' || idKey === 'ControlLeft') {
+        if (idKey === 'AltLeft') this.statusALT = !this.statusALT;
+        if (idKey === 'ControlLeft') this.statusCTRL = !this.statusCTRL;
       }
     });
-    // Мышь ушла с элемента.
+    // ----Мышь ушла с элемента----
     this.keyboard.addEventListener('mouseout', (event) => {
       if (event.target.classList.contains('keyboard--key') && idKey !== 'CapsLock') {
         event.target.classList.remove('hover');
       }
+    });
+    // ----Нажата кнопка на клавиатуре----
+    document.addEventListener('keydown', (event) => {
+      event.preventDefault();
+      const keyRepeat = event.repeat;
+      idKey = event.code;
+      this.eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat);
+    });
+
+    // ----Отпущена кнопка на клавиатуре----
+    document.addEventListener('keyup', (event) => {
+      if (idKey !== 'CapsLock') {
+        this.keyboard.querySelector(`#${event.code}`).classList.remove('hover');
+      }
+      // функционал на ShiftLeft or ShiftRight;
+      if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+        if (this.statusShift) {
+          handlerChange();
+          this.statusShift = false;
+        }
+      }
+
+      // раскладка клавиатуры CTRL + ALT
+      if (event.code === 'AltLeft') this.statusALT = !this.statusALT;
+      if (event.code === 'ControlLeft') this.statusCTRL = !this.statusCTRL;
     });
   }
 }

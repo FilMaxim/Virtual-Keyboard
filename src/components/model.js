@@ -1,11 +1,14 @@
 export default class Model {
   constructor() {
     this.data = JSON.parse(JSON.stringify(require('../keyboard.json')));
-    this.arrdata = this.arrValueFunc('key');
-    this.statusEn = ['key', 'shiftKey'];
-    this.statusRu = ['ru_key', 'ru_shift'];
+
     this.statusShift = false;
-    this.statusLanguage = false;
+    this.statusLanguage = JSON.parse(localStorage.getItem('this.statusLanguage')) || false;
+    this.arrdata = this.statusLanguage ? this.arrValueFunc('keyRu') : this.arrValueFunc('key');
+  }
+
+  commit() {
+    localStorage.setItem('this.statusLanguage', JSON.stringify(this.statusLanguage));
   }
 
   arrValueFunc = (status) => this.data.map((el) => {
@@ -28,5 +31,12 @@ export default class Model {
     }
 
     render(this.arrdata, this.data);
+  };
+
+  changeLanguage = (render) => {
+    this.statusLanguage = !this.statusLanguage;
+    this.statusShift = !this.statusShift;
+    this.commit();
+    return this.changeKeyboard(render);
   };
 }
