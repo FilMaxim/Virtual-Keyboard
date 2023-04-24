@@ -3,6 +3,7 @@ export default class Model {
     this.data = JSON.parse(JSON.stringify(require('../keyboard.json')));
 
     this.statusShift = false;
+    this.statusCaps = false;
     this.statusLanguage = JSON.parse(localStorage.getItem('this.statusLanguage')) || false;
     this.arrdata = this.statusLanguage ? this.arrValueFunc('keyRu') : this.arrValueFunc('key');
   }
@@ -38,5 +39,16 @@ export default class Model {
     this.statusShift = !this.statusShift;
     this.commit();
     return this.changeKeyboard(render);
+  };
+
+  changeCaps = (render) => {
+    if (this.statusCaps) {
+      this.statusCaps = !this.statusCaps;
+      render(this.arrdata, this.data);
+    } else {
+      this.statusCaps = !this.statusCaps;
+      const arrdata1 = this.arrdata.map((el) => ((el.length === 1) ? el.toUpperCase() : el));
+      render(arrdata1, this.data);
+    }
   };
 }

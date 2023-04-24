@@ -75,7 +75,7 @@ export default class View {
     this.textArea.focus();
   }
 
-  eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat = false) {
+  eventServise(idKey, handler, handlerShift, handlerCaps, handleLanguage, keyRepeat = false) {
     if (!idKey) return;
     const el = this.keyboard.querySelector(`#${idKey}`);
     if (el === null) {
@@ -106,13 +106,13 @@ export default class View {
 
     // функционал на CAPS LOCK;
     if (idKey === 'CapsLock' && !keyRepeat) {
-      handlerChange();
+      handlerCaps();
     }
 
     // функционал на ShiftLeft and ShiftRight;
     if (idKey === 'ShiftLeft' || idKey === 'ShiftRight') {
       if (!this.statusShift) {
-        handlerChange();
+        handlerShift();
         this.statusShift = !this.statusShift;
       }
     }
@@ -147,14 +147,14 @@ export default class View {
     if (this.statusALT && this.statusCTRL) handleLanguage();
   }
 
-  clickMousedown(handler, handlerChange, handleLanguage) {
+  clickMousedown(handler, handlerShift, handlerCaps, handleLanguage) {
     let idKey;
 
     // ----Кнопка мыши нажата над элементом-----
     this.keyboard.addEventListener('mousedown', (event) => {
       idKey = event.target.id;
 
-      this.eventServise(idKey, handler, handlerChange, handleLanguage);
+      this.eventServise(idKey, handler, handlerShift, handlerCaps, handleLanguage);
     });
     // ----Кнопка мыши отпущена над элементом----
     this.keyboard.addEventListener('mouseup', (event) => {
@@ -164,7 +164,7 @@ export default class View {
       // функционал на ShiftLeft or ShiftRight;
       if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
         if (this.statusShift) {
-          handlerChange();
+          handlerShift();
           this.statusShift = false;
         }
       }
@@ -182,10 +182,12 @@ export default class View {
     });
     // ----Нажата кнопка на клавиатуре----
     document.addEventListener('keydown', (event) => {
-      event.preventDefault();
       const keyRepeat = event.repeat;
       idKey = event.code;
-      this.eventServise(idKey, handler, handlerChange, handleLanguage, keyRepeat);
+      if (this.keyboard.querySelector(`#${idKey}`)) {
+        event.preventDefault();
+      }
+      this.eventServise(idKey, handler, handlerShift, handlerCaps, handleLanguage, keyRepeat);
     });
 
     // ----Отпущена кнопка на клавиатуре----
@@ -196,11 +198,10 @@ export default class View {
       // функционал на ShiftLeft or ShiftRight;
       if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
         if (this.statusShift) {
-          handlerChange();
+          handlerShift();
           this.statusShift = false;
         }
       }
-
       // раскладка клавиатуры CTRL + ALT
       if (event.code === 'AltLeft') this.statusALT = !this.statusALT;
       if (event.code === 'ControlLeft') this.statusCTRL = !this.statusCTRL;
