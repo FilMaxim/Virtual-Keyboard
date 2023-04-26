@@ -2,6 +2,9 @@ export default class Model {
   constructor() {
     this.data = JSON.parse(JSON.stringify(require('../keyboard.json')));
 
+    this.arrKeyEn = ['key', 'shiftKeyEN'];
+    this.arrKeyRu = ['keyRu', 'shiftKeyRu'];
+
     this.statusShift = false;
     this.statusCaps = false;
     this.statusLanguage = JSON.parse(localStorage.getItem('this.statusLanguage')) || false;
@@ -23,32 +26,38 @@ export default class Model {
     return this.arrdata[positionInArr];
   };
 
-  changeKeyboard = (render) => {
-    this.statusShift = !this.statusShift;
-    if (!this.statusLanguage) {
-      this.arrdata = this.statusShift ? this.arrValueFunc('shiftKeyEN') : this.arrValueFunc('key');
-    } else {
-      this.arrdata = this.statusShift ? this.arrValueFunc('shiftKeyRu') : this.arrValueFunc('keyRu');
-    }
+  change = () => {
+    const arrkey = this.statusLanguage ? this.arrKeyRu : this.arrKeyEn;
 
+    if (!this.statusShift && !this.statusCaps) this.arrdata = this.arrValueFunc(arrkey[0]);
+    if (this.statusShift && !this.statusCaps) this.arrdata = this.arrValueFunc(arrkey[1]);
+    if (!this.statusShift && this.statusCaps) {
+      this.arrdata = this.arrValueFunc(arrkey[0]);
+      this.arrdata = this.arrdata.map((el) => ((el.length === 1) ? el.toUpperCase() : el));
+    }
+    if (this.statusShift && this.statusCaps) {
+      this.arrdata = this.arrValueFunc(arrkey[1]);
+      this.arrdata = this.arrdata.map((el) => ((el.length === 1) ? el.toLowerCase() : el));
+    }
+  };
+
+  changeShift = (render) => {
+    this.statusShift = !this.statusShift;
+    this.change();
     render(this.arrdata, this.data);
   };
 
   changeLanguage = (render) => {
+    console.log(111);
     this.statusLanguage = !this.statusLanguage;
-    this.statusShift = !this.statusShift;
     this.commit();
-    return this.changeKeyboard(render);
+    this.change();
+    render(this.arrdata, this.data);
   };
 
   changeCaps = (render) => {
-    if (this.statusCaps) {
-      this.statusCaps = !this.statusCaps;
-      render(this.arrdata, this.data);
-    } else {
-      this.statusCaps = !this.statusCaps;
-      const arrdata1 = this.arrdata.map((el) => ((el.length === 1) ? el.toUpperCase() : el));
-      render(arrdata1, this.data);
-    }
+    this.statusCaps = !this.statusCaps;
+    this.change();
+    render(this.arrdata, this.data);
   };
 }

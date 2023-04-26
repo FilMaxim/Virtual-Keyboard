@@ -6,7 +6,7 @@ export default class Controller {
     this.onTodoListChanged(this.model.arrdata, this.model.data);
     this.view.clickMousedown(
       this.model.printAlphanumeric,
-      this.handleChange,
+      this.handleShift,
       this.handleCaps,
       this.handleLanguage,
     );
@@ -16,8 +16,8 @@ export default class Controller {
     this.view.displayKey(arrValues, datakey);
   };
 
-  handleChange = () => {
-    this.model.changeKeyboard(this.view.displayKey.bind(this.view));
+  handleShift = () => {
+    this.model.changeShift(this.view.displayKey.bind(this.view));
   };
 
   handleLanguage = () => {
