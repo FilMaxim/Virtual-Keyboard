@@ -77,7 +77,10 @@ export default class View {
     if (!idKey) return;
     document.querySelector('.keyboard__text').focus();
 
+
     const el = this.keyboard.querySelector(`#${idKey}`);
+    if (idKey) { if (!idKey) return; }
+
     if (el === null) {
       return;
     }
@@ -182,6 +185,7 @@ export default class View {
     });
     // ----Нажата кнопка на клавиатуре----
     document.addEventListener('keydown', (event) => {
+
       const keyRepeat = event.repeat;
       idKey = event.code;
 
@@ -189,6 +193,7 @@ export default class View {
         event.preventDefault();
       }
       this.eventServise(idKey, handler, handlerShift, handlerCaps, handleLanguage, keyRepeat);
+
     });
 
     // ----Отпущена кнопка на клавиатуре----
