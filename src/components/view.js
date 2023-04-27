@@ -148,7 +148,7 @@ export default class View {
   clickMousedown(handler, handlerShift, handlerCaps, handleLanguage) {
     let idKey;
     this.keyboard.addEventListener('click', () => {
-      document.querySelector('.keyboard__text').focus();
+      this.textArea.focus();
     });
     // ----Кнопка мыши нажата над элементом-----
     this.keyboard.addEventListener('mousedown', (event) => {
