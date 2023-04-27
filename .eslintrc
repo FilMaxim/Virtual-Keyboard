@@ -10,12 +10,9 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {
-    "no-console": 0,
-  
+  "rules": {  
     "linebreak-style": 0,
     "global-require": 0,
-    "eslint linebreak-style": [0, "error", "windows"]
-    //"import/extensions": ["error", "always", {"ignorePackages": true} ]
+    "eslint linebreak-style": [0, "error", "windows"]    
   }  
 }

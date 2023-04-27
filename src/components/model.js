@@ -48,7 +48,6 @@ export default class Model {
   };
 
   changeLanguage = (render) => {
-    console.log(111);
     this.statusLanguage = !this.statusLanguage;
     this.commit();
     this.change();

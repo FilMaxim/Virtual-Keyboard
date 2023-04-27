@@ -30,8 +30,7 @@ button:focus-visible{
   width: 900px;
 }
 
-.keyboard__text {
-  cursor: pointer;
+.keyboard__text {  
   width: 800px;
   overflow: hidden;
   overflow-wrap: break-word;

@@ -37,7 +37,6 @@ export default class View {
   }
 
   displayKey(arrValues, datakey) {
-    console.log('displayKey');
     // Delete all nodes
     if (this.keyboard.firstChild) {
       this.keyboard.childNodes.forEach((el, index) => {
