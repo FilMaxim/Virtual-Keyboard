@@ -80,7 +80,7 @@ export default class View {
     if (el === null) {
       return;
     }
-    if (!keyRepeat) this.audio.play();
+  
     const elementClik = this.keyboard.querySelector(`#${idKey}`);
     if (idKey && elementClik && idKey !== 'CapsLock') {
       elementClik.classList.add('hover');
